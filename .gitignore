@@ -1,0 +1,8 @@
+*.config
+*.suo
+GameStore/GameStore.Domain/bin/
+GameStore/GameStore.Domain/obj/
+GameStore/GameStore.UnitTests/bin/
+GameStore/GameStore.UnitTests/obj/
+GameStore/GameStore.WebUI/bin/
+GameStore/GameStore.WebUI/obj/
