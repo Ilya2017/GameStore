@@ -1,6 +1,8 @@
 ﻿using GameStore.Domain.Abstract;
+using GameStore.Domain.Entities;
 using GameStore.WebUI.Controllers;
 using GameStore.WebUI.Infrastructure;
+using GameStore.WebUI.Infrastructure.Binders;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using System;
@@ -18,6 +20,8 @@ namespace GameStore.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+			ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
 
 			var container = new UnityContainer().LoadConfiguration();
 			DependencyResolver.SetResolver(new UnityDependencyResolver(container));
